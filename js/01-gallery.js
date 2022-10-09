@@ -30,21 +30,20 @@ function createGalleryItemsMarkup(galleryItems) {
     .join('');
 };
 
-function getUrlOfOriginalImg(e) {
-  const isGalleryImg = e.target.classList.contains('gallery__image');
-
-  if (!isGalleryImg) {
-    return;
-  }
-  
+function getUrlOfOriginalImg(e) { 
   e.preventDefault();
 
   return e.target.dataset.source;
 };
 
 function showOriginalImg(e) {
+  const isGalleryImg = e.target.classList.contains('gallery__image');
+
+  if (!isGalleryImg) {
+    return;
+  }
+
   const urlImg = getUrlOfOriginalImg(e);
-  
   const instance = basicLightbox.create(`
     <img src="${urlImg}" width="800" height="600">
     `, {
