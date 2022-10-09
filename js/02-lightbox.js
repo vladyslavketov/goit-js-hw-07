@@ -4,7 +4,7 @@ import { galleryItems } from './gallery-items.js';
 console.log(galleryItems);
 
 const refs = {
-  galleryContainer: document.querySelector('ul.gallery'),
+  galleryContainer: document.querySelector('div.gallery'),
 };
 const galleryMarkup = createGalleryItemsMarkup(galleryItems);
 refs.galleryContainer.insertAdjacentHTML('beforeend', galleryMarkup);
